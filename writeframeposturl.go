@@ -10,7 +10,7 @@ import (
 //
 //	var url string = "https://example.com/my/post/path.php"
 //	
-//	WriteFramePostURL(writer, url)
+//	frameproto.WriteFramePostURL(writer, url)
 //
 // Would write this HTML <meta/> element:
 //

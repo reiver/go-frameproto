@@ -10,7 +10,7 @@ import (
 //
 //	var label string = "enter your username"
 //	
-//	WriteFrameInputText(writer, label)
+//	frameproto.WriteFrameInputText(writer, label)
 //
 // Would write this HTML <meta/> element:
 //
