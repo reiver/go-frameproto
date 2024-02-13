@@ -1,6 +1,6 @@
 # go-frameproto
 
-Package **frameproto** provides tools for the **Frame Protocol** — which is also known as **Farcaster Frames**.
+Package **frameproto** provides tools for the **Frame Protocol** — which is also known as **Farcaster Frames**, for the Go programming language.
 
 ## Documention
 
