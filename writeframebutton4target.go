@@ -15,7 +15,7 @@ import (
 // Would write this HTML <meta/> element:
 //
 //	<meta property="fc:frame:button:4:target" content="https://example.com/thing/do-it" />
-func WriteFrameButton4Target(writer io.Writer, url string) {
+func WriteFrameButton4Target(writer io.Writer, target string) {
 	const property string = MetaPropertyFrameButton4Target
-	writeMetaPropertyContent(writer, property, url)
+	writeMetaPropertyContent(writer, property, target)
 }
