@@ -2,6 +2,9 @@
 
 Package **frameproto** provides tools for the **Frame Protocol** — which is also known as **Farcaster Frames**, for the Go programming language.
 
+The specification for the **Frame Protocol** is at:
+https://docs.farcaster.xyz/reference/frames/spec
+
 ## Documention
 
 Online documentation, which includes examples, can be found at: http://godoc.org/sourcecode.social/reiver/go-frameproto
