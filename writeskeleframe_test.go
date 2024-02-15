@@ -18,7 +18,7 @@ func TestWriteSkeleFrame(t *testing.T) {
 			Head: "",
 			Expected:
 				`<!DOCTYPE html>`+"\n"+
-				`<html xmlns="http://www.w3.org/1999/xhtml" lang="en">`+"\n"+
+				`<html xmlns="http://www.w3.org/1999/xhtml">`+"\n"+
 				`<head>`+"\n"+
 				`<meta charset="utf-8" />`+"\n"+
 				`</head>`+"\n"+
@@ -33,7 +33,7 @@ func TestWriteSkeleFrame(t *testing.T) {
 			Head: `<!-- Hello world! -->`+"\n",
 			Expected:
 				`<!DOCTYPE html>`+"\n"+
-				`<html xmlns="http://www.w3.org/1999/xhtml" lang="en">`+"\n"+
+				`<html xmlns="http://www.w3.org/1999/xhtml">`+"\n"+
 				`<head>`+"\n"+
 				`<meta charset="utf-8" />`+"\n"+
 
@@ -51,7 +51,7 @@ func TestWriteSkeleFrame(t *testing.T) {
 			Head: `<meta property="hello" content="world" />`+"\n",
 			Expected:
 				`<!DOCTYPE html>`+"\n"+
-				`<html xmlns="http://www.w3.org/1999/xhtml" lang="en">`+"\n"+
+				`<html xmlns="http://www.w3.org/1999/xhtml">`+"\n"+
 				`<head>`+"\n"+
 				`<meta charset="utf-8" />`+"\n"+
 
@@ -72,7 +72,7 @@ func TestWriteSkeleFrame(t *testing.T) {
 				`<meta property="og:image" content="https://example.com/path/to/img.png" />`+"\n",
 			Expected:
 				`<!DOCTYPE html>`+"\n"+
-				`<html xmlns="http://www.w3.org/1999/xhtml" lang="en">`+"\n"+
+				`<html xmlns="http://www.w3.org/1999/xhtml">`+"\n"+
 				`<head>`+"\n"+
 				`<meta charset="utf-8" />`+"\n"+
 
