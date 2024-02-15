@@ -7,39 +7,39 @@ import (
 func TestAppendFrameImage(t *testing.T) {
 
 	tests := []struct{
-		Version string
+		URL string
 		Expected string
 	}{
 		{
-			Version:                                           "",
+			URL:                                               "",
 			Expected: `<meta property="fc:frame:image" content="" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                           "something",
+			URL:                                               "something",
 			Expected: `<meta property="fc:frame:image" content="something" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                           "Hello world! 🙂",
+			URL:                                               "Hello world! 🙂",
 			Expected: `<meta property="fc:frame:image" content="Hello world! 🙂" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                           "https://example.com/path/to/post/to.png",
+			URL:                                               "https://example.com/path/to/post/to.png",
 			Expected: `<meta property="fc:frame:image" content="https://example.com/path/to/post/to.png" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                           "x-proto:apple/banana/cherry",
+			URL:                                               "x-proto:apple/banana/cherry",
 			Expected: `<meta property="fc:frame:image" content="x-proto:apple/banana/cherry" />`+"\n",
 		},
 	}
@@ -50,7 +50,7 @@ func TestAppendFrameImage(t *testing.T) {
 			var buffer [256]byte
 			var p []byte = buffer[0:0]
 
-			p = AppendFrameImage(p, test.Version)
+			p = AppendFrameImage(p, test.URL)
 
 			expected := test.Expected
 			actual   := string(p)
@@ -61,7 +61,7 @@ func TestAppendFrameImage(t *testing.T) {
 				t.Logf("ACTUAL:   %s", actual)
 				t.Logf("EXPECTED: %q", expected)
 				t.Logf("ACTUAL:   %q", actual)
-				t.Logf("LABEL: %q", test.Version)
+				t.Logf("URL: %q", test.URL)
 				continue
 			}
 		}
@@ -75,7 +75,7 @@ func TestAppendFrameImage(t *testing.T) {
 
 			p = append(p, top...)
 
-			p = AppendFrameImage(p, test.Version)
+			p = AppendFrameImage(p, test.URL)
 
 			p = append(p, bottom...)
 
@@ -88,7 +88,7 @@ func TestAppendFrameImage(t *testing.T) {
 				t.Logf("ACTUAL:   %s", actual)
 				t.Logf("EXPECTED: %q", expected)
 				t.Logf("ACTUAL:   %q", actual)
-				t.Logf("LABEL: %q", test.Version)
+				t.Logf("URL: %q", test.URL)
 				continue
 			}
 		}
