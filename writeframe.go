@@ -10,7 +10,7 @@ import (
 //
 //	var version string = "vNext"
 //	
-//	frameproto.WriteFrame(writer, version)
+//	str := frameproto.WriteFrame(writer, version)
 //
 // Would write this HTML <meta/> element:
 //
@@ -21,7 +21,7 @@ import (
 //
 // Which in code would be used as:
 //
-//	frameproto.WriteFrame(writer, frameproto.VersionVNext)
+//	str := frameproto.WriteFrame(writer, frameproto.VersionVNext)
 func WriteFrame(writer io.Writer, version string) {
 	const property string = MetaPropertyFrame
 	writeMetaPropertyContent(writer, property, version)
