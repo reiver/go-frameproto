@@ -38,7 +38,7 @@ import (
 //
 //	// <meta property="fc:frame:button:2:action" content="post_redirect" />
 //	frameproto.WriteFrameButton2Action(writer, frameproto.ButtonActionPostRedirect)
-func WriteFrameButton2Action(writer io.Writer, action string) {
+func WriteFrameButton2Action(writer io.Writer, action string) error {
 	const property string = MetaPropertyFrameButton2Action
-	writeMetaPropertyContent(writer, property, action)
+	return writeMetaPropertyContent(writer, property, action)
 }

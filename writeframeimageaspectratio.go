@@ -26,7 +26,7 @@ import (
 // And:
 //
 //	frameproto.WriteFrameImageAspectRatio(writer, frameproto.AspectRatioOneToOne)
-func WriteFrameImageAspectRatio(writer io.Writer, label string) {
+func WriteFrameImageAspectRatio(writer io.Writer, label string) error {
 	const property string = MetaPropertyFrameImageAspectRatio
-	writeMetaPropertyContent(writer, property, label)
+	return writeMetaPropertyContent(writer, property, label)
 }

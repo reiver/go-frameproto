@@ -22,7 +22,7 @@ import (
 // Which in code would be used as:
 //
 //	str := frameproto.WriteFrame(writer, frameproto.VersionVNext)
-func WriteFrame(writer io.Writer, version string) {
+func WriteFrame(writer io.Writer, version string) error {
 	const property string = MetaPropertyFrame
-	writeMetaPropertyContent(writer, property, version)
+	return writeMetaPropertyContent(writer, property, version)
 }

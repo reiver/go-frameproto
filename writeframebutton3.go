@@ -15,7 +15,7 @@ import (
 // Would write this HTML <meta/> element:
 //
 //	<meta property="fc:frame:button:3" content="go forward" />
-func WriteFrameButton3(writer io.Writer, label string) {
+func WriteFrameButton3(writer io.Writer, label string) error {
 	const property string = MetaPropertyFrameButton3
-	writeMetaPropertyContent(writer, property, label)
+	return writeMetaPropertyContent(writer, property, label)
 }

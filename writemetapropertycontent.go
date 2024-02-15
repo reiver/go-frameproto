@@ -4,10 +4,10 @@ import (
 	"io"
 )
 
-func writeMetaPropertyContent(writer io.Writer, property string, content string) {
+func writeMetaPropertyContent(writer io.Writer, property string, content string) error {
 
 	if nil == writer {
-		return
+		return errNilWriter
 	}
 
 	var buffer [bufferSize]byte
@@ -15,5 +15,6 @@ func writeMetaPropertyContent(writer io.Writer, property string, content string)
 
 	p = appendMetaPropertyContent(p, property, content)
 
-	writer.Write(p)
+	_, err := writer.Write(p)
+	return err
 }

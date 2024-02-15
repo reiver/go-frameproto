@@ -15,7 +15,7 @@ import (
 // Would write this HTML <meta/> element:
 //
 //	<meta property="fc:frame:post_url" content="https://example.com/my/post/path.php" />
-func WriteFramePostURL(writer io.Writer, url string) {
+func WriteFramePostURL(writer io.Writer, url string) error {
 	const property string = MetaPropertyFramePostURL
-	writeMetaPropertyContent(writer, property, url)
+	return writeMetaPropertyContent(writer, property, url)
 }

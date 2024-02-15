@@ -15,8 +15,8 @@ import (
 // Would write this HTML <meta/> element:
 //
 //	<meta property="fc:frame:image" content="https://example.com/images/screen.png" />
-func WriteFrameImage(writer io.Writer, url string) {
+func WriteFrameImage(writer io.Writer, url string) error {
 	const property string = MetaPropertyFrameImage
-	writeMetaPropertyContent(writer, property, url)
+	return writeMetaPropertyContent(writer, property, url)
 }
 

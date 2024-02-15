@@ -61,7 +61,14 @@ func TestWriteMetaPropertyContent(t *testing.T) {
 
 		var buffer strings.Builder
 
-		writeMetaPropertyContent(&buffer, test.Property, test.Content)
+		err := writeMetaPropertyContent(&buffer, test.Property, test.Content)
+		if nil != err {
+			t.Errorf("For test #%d, did not expect an error but actually got one." , testNumber)
+			t.Logf("ERROR: (%T) %s", err, err)
+			t.Logf("PROPERTY: %s", test.Property)
+			t.Logf("CONTENT:  %s", test.Content)
+			continue
+		}
 
 		expected := test.Expected
 		actual   := buffer.String()
