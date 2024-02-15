@@ -10,7 +10,7 @@ import (
 //
 //	var buttonAction string = "post"
 //	
-//	frameproto.WriteFrameButton3Action(writer, aspectRatio)
+//	frameproto.WriteFrameButton3Action(writer, buttonAction)
 //
 // Would write this HTML <meta/> element:
 //
@@ -21,18 +21,22 @@ import (
 //
 // Which in code would be used as:
 //
+//	// <meta property="fc:frame:button:3:action" content="link" />
 //	frameproto.WriteFrameButton3Action(writer, frameproto.ButtonActionLink)
 //
 // And:
 //
+//	// <meta property="fc:frame:button:3:action" content="mint" />
 //	frameproto.WriteFrameButton3Action(writer, frameproto.ButtonActionMint)
 //
 // And:
 //
+//	// <meta property="fc:frame:button:3:action" content="post" />
 //	frameproto.WriteFrameButton3Action(writer, frameproto.ButtonActionPost)
 //
 // And:
 //
+//	// <meta property="fc:frame:button:3:action" content="post_redirect" />
 //	frameproto.WriteFrameButton3Action(writer, frameproto.ButtonActionPostRedirect)
 func WriteFrameButton3Action(writer io.Writer, action string) {
 	const property string = MetaPropertyFrameButton3Action
