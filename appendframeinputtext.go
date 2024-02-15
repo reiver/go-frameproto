@@ -15,7 +15,7 @@ package frameproto
 // Would append this HTML <meta/> element:
 //
 //	<meta property="fc:frame:input:text" content="enter your username" />
-func AppendFrameInputText(p []byte, url string) []byte {
+func AppendFrameInputText(p []byte, label string) []byte {
 	const property string = MetaPropertyFrameInputText
-	return appendMetaPropertyContent(p, property, url)
+	return appendMetaPropertyContent(p, property, label)
 }

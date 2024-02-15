@@ -7,39 +7,39 @@ import (
 func TestAppendFrameInputText(t *testing.T) {
 
 	tests := []struct{
-		Version string
+		Label string
 		Expected string
 	}{
 		{
-			Version:                                                "",
+			Label:                                                  "",
 			Expected: `<meta property="fc:frame:input:text" content="" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                                "something",
+			Label:                                                  "something",
 			Expected: `<meta property="fc:frame:input:text" content="something" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                                "Hello world! 🙂",
+			Label:                                                  "Hello world! 🙂",
 			Expected: `<meta property="fc:frame:input:text" content="Hello world! 🙂" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                                "enter your username",
+			Label:                                                  "enter your username",
 			Expected: `<meta property="fc:frame:input:text" content="enter your username" />`+"\n",
 		},
 
 
 
 		{
-			Version:                                                "I like to eat, eat, eat, apples and banana",
+			Label:                                                  "I like to eat, eat, eat, apples and banana",
 			Expected: `<meta property="fc:frame:input:text" content="I like to eat, eat, eat, apples and banana" />`+"\n",
 		},
 	}
@@ -50,7 +50,7 @@ func TestAppendFrameInputText(t *testing.T) {
 			var buffer [256]byte
 			var p []byte = buffer[0:0]
 
-			p = AppendFrameInputText(p, test.Version)
+			p = AppendFrameInputText(p, test.Label)
 
 			expected := test.Expected
 			actual   := string(p)
@@ -61,7 +61,7 @@ func TestAppendFrameInputText(t *testing.T) {
 				t.Logf("ACTUAL:   %s", actual)
 				t.Logf("EXPECTED: %q", expected)
 				t.Logf("ACTUAL:   %q", actual)
-				t.Logf("LABEL: %q", test.Version)
+				t.Logf("LABEL: %q", test.Label)
 				continue
 			}
 		}
@@ -75,7 +75,7 @@ func TestAppendFrameInputText(t *testing.T) {
 
 			p = append(p, top...)
 
-			p = AppendFrameInputText(p, test.Version)
+			p = AppendFrameInputText(p, test.Label)
 
 			p = append(p, bottom...)
 
@@ -88,7 +88,7 @@ func TestAppendFrameInputText(t *testing.T) {
 				t.Logf("ACTUAL:   %s", actual)
 				t.Logf("EXPECTED: %q", expected)
 				t.Logf("ACTUAL:   %q", actual)
-				t.Logf("LABEL: %q", test.Version)
+				t.Logf("LABEL: %q", test.Label)
 				continue
 			}
 		}
