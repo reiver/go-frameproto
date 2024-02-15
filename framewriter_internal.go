@@ -10,6 +10,24 @@ type internalFrameWriter struct {
 
 var _ FrameWriter = internalFrameWriter{}
 
+// CreateFrameWriter returns a FrameWriter that writers to an io.Writer.
+//
+// For example:
+//
+//	func ServeHTTP(responseWriter http.ResponseWriter, request *http.Request) {
+//		
+//		// ...
+//		
+//		var frameWriter frameproto.FrameWriter = frameproto.CreateFrameWriter(responseWriter)
+//		
+//		// ...
+//		
+//		frameWriter.WriteFrame(frameproto.VersionVNext)
+//		frameWriter.WriteFrameImage(imageURL)
+//		
+//		// ...
+//		
+//	}
 func CreateFrameWriter(writer io.Writer) FrameWriter {
 	return internalFrameWriter{
 		writer:writer,
