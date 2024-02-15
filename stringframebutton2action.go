@@ -6,7 +6,7 @@ package frameproto
 //
 //	var buttonAction string = "post"
 //	
-//	str := frameproto.StringFrameButton2Action(aspectRatio)
+//	str := frameproto.StringFrameButton2Action(buttonAction)
 //
 // Would return this HTML <meta/> element:
 //
@@ -17,18 +17,22 @@ package frameproto
 //
 // Which in code would be used as:
 //
+//	// <meta property="fc:frame:button:2:action" content="link" />
 //	str := frameproto.StringFrameButton2Action(frameproto.ButtonActionLink)
 //
 // And:
 //
+//	// <meta property="fc:frame:button:2:action" content="mint" />
 //	str := frameproto.StringFrameButton2Action(frameproto.ButtonActionMint)
 //
 // And:
 //
+//	// <meta property="fc:frame:button:2:action" content="post" />
 //	str :+ frameproto.StringFrameButton2Action(frameproto.ButtonActionPost)
 //
 // And:
 //
+//	// <meta property="fc:frame:button:2:action" content="post_redirect" />
 //	str := frameproto.StringFrameButton2Action(frameproto.ButtonActionPostRedirect)
 func StringFrameButton2Action(action string) string {
 	const property string = MetaPropertyFrameButton2Action
