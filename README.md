@@ -23,7 +23,7 @@ No need to worry about security and privacy holes that Web technologies introduc
 
 Although the **Frames Protocol** _could_ be used outside of **Farcaster**, at the time of writing, **Farcaster** clients (such as **Warpcast**) are the only major (client-side) platform to support it.
 
-(The server-side of the <strong>Frames Protocol</strong>, which is called a <strong>Frame Server</strong>, is an just HTTP resource — which some might loosely call an HTTP (or HTTP) URL.)
+(The server-side of the <strong>Frames Protocol</strong>, which is called a <strong>Frame Server</strong>, is an just HTTP resource — which some might loosely call an HTTP (or HTTPS) URL.)
 
 Enough talking — let's look at some code.
 Here is the client-side of a **Frames Protocol** application:
