@@ -27,7 +27,7 @@ const skeleFrameBotton =
 //		frameproto.WriteFrame(writer, frameproto.VersionVNext)
 //		
 //		// This will write:
-//		<meta property="fc:frame:image" content="https://example.com/path/to/img.png" />
+//		// <meta property="fc:frame:image" content="https://example.com/path/to/img.png" />
 //		var imgURL string = "https://example.com/path/to/img.png"
 //		frameproto.WriteFrameImage(writer, imgURL)
 //	})
