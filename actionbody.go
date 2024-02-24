@@ -36,7 +36,7 @@ type ActionBodyUntrustedData struct {
 }
 
 type ActionBodyTrustedData struct {
-	MessageBytes opt.Optional[string]
+	MessageBytes opt.Optional[string] `json:"messageBytes"`
 }
 
 type ActionBodyCastID struct {
