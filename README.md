@@ -91,4 +91,4 @@ GOPROXY=direct go get https://sourcecode.social/reiver/go-frameproto
 
 ## Author
 
-Package **frameproto** was written by [Charles Iliya Krempeaux](http://changelog.ca)
+Package **frameproto** was written by [Charles Iliya Krempeaux](http://reiver.link)
